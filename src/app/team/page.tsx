@@ -118,7 +118,7 @@ export default function Team() {
                                             </div>
                                         )}
 
-                                        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
+                                        {<div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
                                             <div className="flex space-x-4">
                                                 {member.socials?.linkedin && (
                                                     <a href={member.socials.linkedin} className="text-white hover:text-primary transition-colors">
@@ -136,7 +136,7 @@ export default function Team() {
                                                     </a>
                                                 )}
                                             </div>
-                                        </div> */}
+                                        </div>}
                                     </div>
                                     <CardContent className="p-6">
                                         <h3 className="text-2xl font-bold tracking-tight mb-1 text-foreground">{member.name}</h3>
