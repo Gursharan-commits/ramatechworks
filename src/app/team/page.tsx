@@ -11,11 +11,11 @@ export default function Team() {
         role: string;
         bio: string;
         image: string;
-        // socials?: {
-        //     linkedin?: string;
-        //     twitter?: string;
-        //     github?: string;
-        // };
+        socials?: {
+            linkedin?: string;
+            twitter?: string;
+            github?: string;
+        };
     }
 
     const teamMembers: TeamMember[] = [
