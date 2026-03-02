@@ -11,11 +11,11 @@ export default function Team() {
         role: string;
         bio: string;
         image: string;
-        socials?: {
-            linkedin?: string;
-            twitter?: string;
-            github?: string;
-        };
+        // socials?: {
+        //     linkedin?: string;
+        //     twitter?: string;
+        //     github?: string;
+        // };
     }
 
     const teamMembers: TeamMember[] = [
@@ -24,21 +24,21 @@ export default function Team() {
             role: "Founder · CEO & CTO",
             bio: "Gursharan Singh is a systems-focused engineer leading Rama Techworks at the intersection of infrastructure and intelligent automation. With experience spanning on-ground engineering execution and AI-driven workflow architecture, he brings a structured, enterprise-first approach to building scalable systems. His philosophy is simple: Design with clarity. Engineer with discipline. Scale with intelligence.",
             image: "", // Placeholder for Gursharan's image
-            socials: { linkedin: "#", twitter: "#" }
+            // socials: { linkedin: "#", twitter: "#" }
         },
         {
             name: "Team Member 2",
             role: "Role / Position",
             bio: "Biography and introduction will be added here. They will help drive the operations and engineering goals of Rama Techworks forward.",
             image: "", // Placeholder
-            socials: { linkedin: "#" }
+            // socials: { linkedin: "#" }
         },
         {
             name: "Team Member 3",
             role: "Role / Position",
             bio: "Biography and introduction will be added here. Providing crucial support in systems design and field execution workflows.",
             image: "", // Placeholder
-            socials: { linkedin: "#" }
+            // socials: { linkedin: "#" }
         }
     ];
 
@@ -118,7 +118,7 @@ export default function Team() {
                                             </div>
                                         )}
 
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
+                                        {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
                                             <div className="flex space-x-4">
                                                 {member.socials?.linkedin && (
                                                     <a href={member.socials.linkedin} className="text-white hover:text-primary transition-colors">
@@ -136,7 +136,7 @@ export default function Team() {
                                                     </a>
                                                 )}
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                     <CardContent className="p-6">
                                         <h3 className="text-2xl font-bold tracking-tight mb-1 text-foreground">{member.name}</h3>
