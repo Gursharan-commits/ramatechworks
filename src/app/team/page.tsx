@@ -11,7 +11,7 @@ export default function Team() {
         role: string;
         bio: string;
         image: string;
-        socials: {
+        socials?: {
             linkedin?: string;
             twitter?: string;
             github?: string;
@@ -120,17 +120,17 @@ export default function Team() {
 
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
                                             <div className="flex space-x-4">
-                                                {member.socials.linkedin && (
+                                                {member.socials?.linkedin && (
                                                     <a href={member.socials.linkedin} className="text-white hover:text-primary transition-colors">
                                                         <Linkedin className="h-5 w-5" />
                                                     </a>
                                                 )}
-                                                {member.socials.twitter && (
+                                                {member.socials?.twitter && (
                                                     <a href={member.socials.twitter} className="text-white hover:text-primary transition-colors">
                                                         <Twitter className="h-5 w-5" />
                                                     </a>
                                                 )}
-                                                {member.socials.github && (
+                                                {member.socials?.github && (
                                                     <a href={member.socials.github} className="text-white hover:text-primary transition-colors">
                                                         <Github className="h-5 w-5" />
                                                     </a>
