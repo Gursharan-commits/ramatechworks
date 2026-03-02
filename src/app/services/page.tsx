@@ -1,48 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Cpu, Zap, Cloud, Code, Database, Lock } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion, type Variants } from "framer-motion";
+import { Cpu, Zap, ArrowRight, Settings } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-export default function Services() {
-    const engineeringServices = [
-        {
-            title: "Custom Software Development",
-            description: "Tailored enterprise applications built with modern, scalable architectures to solve your unique business challenges.",
-            icon: <Code className="h-6 w-6 text-primary" />,
-        },
-        {
-            title: "Cloud Infrastructure",
-            description: "Secure, highly available cloud environments optimized for performance and cost-efficiency.",
-            icon: <Cloud className="h-6 w-6 text-primary" />,
-        },
-        {
-            title: "Data Engineering",
-            description: "Robust data pipelines and analytics platforms that turn raw information into actionable business intelligence.",
-            icon: <Database className="h-6 w-6 text-primary" />,
-        }
-    ];
-
-    const automationServices = [
-        {
-            title: "Workflow Automation",
-            description: "Eliminate manual tasks and reduce errors by automating complex business processes across your organization.",
-            icon: <Zap className="h-6 w-6 text-primary" />,
-        },
-        {
-            title: "Intelligent Systems Integration",
-            description: "Connect disparate software platforms to create a unified, intelligent operational ecosystem.",
-            icon: <Cpu className="h-6 w-6 text-primary" />,
-        },
-        {
-            title: "Security & Compliance Automation",
-            description: "Automated security scanning and compliance reporting to keep your enterprise safe without slowing down development.",
-            icon: <Lock className="h-6 w-6 text-primary" />,
-        }
-    ];
-
-    const containerVariants: import("framer-motion").Variants = {
+export default function ServicesOverview() {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -50,7 +15,7 @@ export default function Services() {
         },
     };
 
-    const itemVariants: import("framer-motion").Variants = {
+    const itemVariants: Variants = {
         hidden: { y: 20, opacity: 0 },
         visible: {
             y: 0,
@@ -60,113 +25,124 @@ export default function Services() {
     };
 
     return (
-        <div className="flex flex-col min-h-[calc(100vh-4rem)] pt-12">
-            {/* Services Header */}
-            <section className="py-20 bg-muted/30">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <motion.h1
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground mb-6"
-                    >
-                        Capabilities & <span className="text-primary">Expertise</span>
-                    </motion.h1>
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.2 }}
-                        className="text-lg text-muted-foreground max-w-3xl mx-auto"
-                    >
-                        Comprehensive technology solutions designed to elevate enterprise performance, from foundational engineering to advanced system automation.
-                    </motion.p>
-                </div>
+        <div className="flex flex-col min-h-screen pt-24 pb-16 bg-background">
+            {/* Header */}
+            <section className="py-16 text-center px-4 max-w-4xl mx-auto">
+                <motion.h1
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-4xl md:text-6xl font-extrabold tracking-tighter text-foreground mb-6"
+                >
+                    Our <span className="text-primary">Capabilities</span>
+                </motion.h1>
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                    className="text-lg md:text-xl text-muted-foreground mx-auto"
+                >
+                    From foundational field engineering to advanced AI-driven automation, we build scalable systems tailored for enterprises and growing SMEs.
+                </motion.p>
             </section>
 
-            {/* Engineering Section */}
-            <section id="engineering" className="py-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="mb-16">
-                        <h2 className="text-3xl font-bold tracking-tight mb-4 flex items-center gap-3">
-                            <Cpu className="h-8 w-8 text-primary" /> Engineering
-                        </h2>
-                        <p className="text-muted-foreground max-w-2xl text-lg">
-                            We build resilient software foundations. Our engineering teams deliver high-performance, scalable solutions tailored for complex enterprise requirements.
-                        </p>
-                    </div>
-
-                    <motion.div
-                        className="grid grid-cols-1 md:grid-cols-3 gap-8"
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                    >
-                        {engineeringServices.map((service, index) => (
-                            <motion.div key={index} variants={itemVariants}>
-                                <Card className="h-full border-border/50 hover:border-primary/50 transition-colors">
-                                    <CardHeader>
-                                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                                            {service.icon}
-                                        </div>
-                                        <CardTitle className="text-xl">{service.title}</CardTitle>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <CardDescription className="text-base leading-relaxed">
-                                            {service.description}
-                                        </CardDescription>
-                                    </CardContent>
-                                </Card>
-                            </motion.div>
-                        ))}
+            {/* Overview Cards */}
+            <section className="py-12 px-4 max-w-6xl mx-auto w-full">
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    {/* Engineering overview */}
+                    <motion.div variants={itemVariants} className="flex h-full">
+                        <Card className="flex flex-col h-full border-border/50 hover:border-primary/50 transition-colors shadow-sm hover:shadow-md">
+                            <CardHeader>
+                                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                                    <Settings className="h-7 w-7 text-primary" />
+                                </div>
+                                <CardTitle className="text-3xl font-bold">Engineering</CardTitle>
+                                <CardDescription className="text-base mt-2">
+                                    Enterprise-grade infrastructure deployment executed with precision.
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent className="flex-grow">
+                                <ul className="space-y-3 text-muted-foreground">
+                                    <li className="flex items-start gap-2">
+                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                                        <span>Infrastructure Development & Smart Deployments</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                                        <span>Project Management & Supervision</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                                        <span>Field Operation Controls</span>
+                                    </li>
+                                </ul>
+                            </CardContent>
+                            <CardFooter className="pt-6">
+                                <Button asChild className="w-full gap-2 group" variant="outline">
+                                    <Link href="/services/engineering">
+                                        View Engineering Details
+                                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                    </Link>
+                                </Button>
+                            </CardFooter>
+                        </Card>
                     </motion.div>
-                </div>
-            </section>
 
-            {/* System Automation Section */}
-            <section id="system-automation" className="py-24 bg-muted/30 border-t border-border/50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="mb-16">
-                        <h2 className="text-3xl font-bold tracking-tight mb-4 flex items-center gap-3">
-                            <Zap className="h-8 w-8 text-primary" /> System Automation
-                        </h2>
-                        <p className="text-muted-foreground max-w-2xl text-lg">
-                            We eliminate friction. By automating core processes and integrating intelligent systems, we drastically reduce operational overhead.
-                        </p>
-                    </div>
-
-                    <motion.div
-                        className="grid grid-cols-1 md:grid-cols-3 gap-8"
-                        variants={containerVariants}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                    >
-                        {automationServices.map((service, index) => (
-                            <motion.div key={index} variants={itemVariants}>
-                                <Card className="h-full border-border/50 hover:border-primary/50 transition-colors">
-                                    <CardHeader>
-                                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                                            {service.icon}
-                                        </div>
-                                        <CardTitle className="text-xl">{service.title}</CardTitle>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <CardDescription className="text-base leading-relaxed">
-                                            {service.description}
-                                        </CardDescription>
-                                    </CardContent>
-                                </Card>
-                            </motion.div>
-                        ))}
+                    {/* Intelligent Systems overview */}
+                    <motion.div variants={itemVariants} className="flex h-full">
+                        <Card className="flex flex-col h-full border-border/50 hover:border-primary/50 transition-colors shadow-sm hover:shadow-md">
+                            <CardHeader>
+                                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                                    <Cpu className="h-7 w-7 text-primary" />
+                                </div>
+                                <CardTitle className="text-3xl font-bold">Intelligent Systems</CardTitle>
+                                <CardDescription className="text-base mt-2">
+                                    Automate workflows and eliminate operational inefficiencies with embedded AI.
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent className="flex-grow">
+                                <ul className="space-y-3 text-muted-foreground">
+                                    <li className="flex items-start gap-2">
+                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                                        <span>AI Calling Agents & Voice Bots</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                                        <span>Workflow Automation & Dashboards</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                                        <span>Enterprise Software Customization</span>
+                                    </li>
+                                </ul>
+                            </CardContent>
+                            <CardFooter className="pt-6">
+                                <Button asChild className="w-full gap-2 group" variant="outline">
+                                    <Link href="/services/intelligent-systems">
+                                        View Intelligent Systems
+                                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                    </Link>
+                                </Button>
+                            </CardFooter>
+                        </Card>
                     </motion.div>
-                </div>
+                </motion.div>
             </section>
 
-            {/* CTA */}
-            <section className="py-20 text-center">
-                <div className="max-w-3xl mx-auto px-4">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-6">Need a custom solution?</h2>
-                    <Button size="lg" className="rounded-full px-8">Discuss Your Project</Button>
+            {/* Bottom CTA */}
+            <section className="py-20 mt-12 bg-muted/20 border-t border-border/50">
+                <div className="max-w-3xl mx-auto px-4 text-center">
+                    <h2 className="text-3xl font-bold mb-6">Not sure which service you need?</h2>
+                    <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+                        Talk to our experts. We&apos;ll analyze your business operations and recommend the best technical approach tailored to your specific goals.
+                    </p>
+                    <Button size="lg" className="rounded-full px-8 gap-2" asChild>
+                        <Link href="/contact">Book a Consultation <ArrowRight className="h-4 w-4" /></Link>
+                    </Button>
                 </div>
             </section>
         </div>

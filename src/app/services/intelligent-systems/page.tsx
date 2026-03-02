@@ -86,7 +86,7 @@ export default function IntelligentSystemsService() {
                                     Automation layered on top of chaos creates more chaos. At Rama Techworks, we engineer intelligent systems that integrate directly into your workflows — enhancing efficiency without disrupting operational stability.
                                 </p>
                                 <p className="text-foreground/90 font-medium pt-2">
-                                    We don't implement tools. <span className="text-primary italic">We architect intelligence.</span>
+                                    We don&apos;t implement tools. <span className="text-primary italic">We architect intelligence.</span>
                                 </p>
                             </div>
 
@@ -195,6 +195,83 @@ export default function IntelligentSystemsService() {
                             </div>
                         </div>
 
+                    </div>
+                </div>
+            </section>
+
+            {/* AI Calling Agent Product Showcase */}
+            <section className="py-24 bg-card border-b border-border">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="space-y-6"
+                        >
+                            <div className="inline-flex items-center rounded-sm bg-primary/10 px-3 py-1 text-sm text-primary font-medium">
+                                <PhoneCall className="h-4 w-4 mr-2" />
+                                Product Spotlight
+                            </div>
+                            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+                                AI Calling Agent
+                            </h2>
+                            <p className="text-xl text-muted-foreground font-medium">
+                                Built to Reduce Cost. Designed to Increase Performance.
+                            </p>
+
+                            <div className="space-y-4 pt-4 border-t border-border">
+                                <h3 className="font-semibold text-lg">Most call centers struggle with:</h3>
+                                <ul className="space-y-2 text-muted-foreground">
+                                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-destructive shrink-0" /> High salary and attrition costs</li>
+                                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-destructive shrink-0" /> Inconsistent agent performance</li>
+                                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-destructive shrink-0" /> Missed follow-ups</li>
+                                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-destructive shrink-0" /> Low lead qualification speed</li>
+                                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-destructive shrink-0" /> Language barriers</li>
+                                </ul>
+                            </div>
+                            <div className="pt-6">
+                                <p className="text-2xl font-bold italic text-foreground border-l-4 border-primary pl-4 py-1">
+                                    This isn’t a bot.<br />It’s a scalable digital workforce.
+                                </p>
+                            </div>
+                            <Button size="lg" className="h-12 px-8 rounded-full shadow-lg gap-2 mt-4" asChild>
+                                <a href="https://aicallingagent.in" target="_blank" rel="noopener noreferrer">
+                                    Explore AI Calling Agent <ArrowRight className="h-4 w-4" />
+                                </a>
+                            </Button>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            className="bg-muted bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl p-8 md:p-12 border border-border/50 shadow-inner"
+                        >
+                            <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                                <ShieldCheck className="text-primary h-6 w-6" /> Our AI Calling Agent Solves This With:
+                            </h3>
+                            <ul className="space-y-4">
+                                {[
+                                    "Multilingual AI conversations (powered by Sarvam AI)",
+                                    "Scripted + dynamic branching logic",
+                                    "Context-aware objection handling",
+                                    "Emotional tone detection",
+                                    "Human barge-in & escalation",
+                                    "Custom CRM access",
+                                    "WhatsApp Business automation",
+                                    "A/B testing for script optimization",
+                                    "Real-time analytics dashboard"
+                                ].map((feature, idx) => (
+                                    <li key={idx} className="flex items-start gap-3 bg-background/60 backdrop-blur-sm p-4 rounded-xl border border-border/50 shadow-sm">
+                                        <div className="mt-0.5 p-1 bg-primary/10 rounded-full text-primary shrink-0">
+                                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z" fill="currentColor" fillRule="evenodd" clipRule="evenodd"></path></svg>
+                                        </div>
+                                        <span className="font-medium text-foreground">{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
                     </div>
                 </div>
             </section>

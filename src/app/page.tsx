@@ -104,11 +104,11 @@ export default function Home() {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="h-12 px-8 text-base rounded-full shadow-lg hover:shadow-primary/25 transition-all w-full sm:w-auto">
-              Explore Services
+            <Button size="lg" className="h-12 px-8 text-base rounded-full shadow-lg hover:shadow-primary/25 transition-all w-full sm:w-auto" asChild>
+              <Link href="/services">Explore Services</Link>
             </Button>
-            <Button size="lg" variant="outline" className="h-12 px-8 text-base rounded-full w-full sm:w-auto">
-              Contact Us
+            <Button size="lg" variant="outline" className="h-12 px-8 text-base rounded-full w-full sm:w-auto" asChild>
+              <Link href="/contact">Contact Us</Link>
             </Button>
           </motion.div>
         </motion.div>
@@ -145,8 +145,8 @@ export default function Home() {
                     src={client.logo}
                     alt={client.name}
                     className={`max-h-full max-w-full object-contain ${client.name === "Polaris"
-                        ? "drop-shadow-[0_0_3px_rgba(0,0,0,0.5)] dark:drop-shadow-none"
-                        : ""
+                      ? "drop-shadow-[0_0_3px_rgba(0,0,0,0.5)] dark:drop-shadow-none"
+                      : ""
                       }`}
                     onError={(e) => {
                       // Fallback logic if user hasn't uploaded image yet
@@ -210,8 +210,8 @@ export default function Home() {
           <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
             Partner with us to build the technology foundation your enterprise needs to thrive.
           </p>
-          <Button size="lg" className="h-14 px-10 text-lg rounded-full shadow-lg gap-2">
-            Get in touch with our team <ArrowRight className="h-5 w-5" />
+          <Button size="lg" className="h-14 px-10 text-lg rounded-full shadow-lg gap-2" asChild>
+            <Link href="/contact">Get in touch with our team <ArrowRight className="h-5 w-5" /></Link>
           </Button>
         </div>
       </section>

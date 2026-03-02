@@ -65,7 +65,7 @@ export default function EngineeringService() {
                             </div>
 
                             <p className="text-foreground font-semibold text-xl mb-10 border-l-4 border-primary pl-4">
-                                We don't just install. We engineer environments that operate reliably at scale.
+                                We don&apos;t just install. We engineer environments that operate reliably at scale.
                             </p>
 
                             <Button size="lg" className="h-14 px-8 text-base rounded-full shadow-lg gap-2">

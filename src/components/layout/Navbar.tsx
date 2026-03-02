@@ -65,8 +65,10 @@ export function Navbar() {
                             </div>
                         ))}
 
-                        <Button size="sm" className="gap-2 rounded-full">
-                            Get Started <ArrowRight className="h-4 w-4" />
+                        <Button size="sm" className="gap-2 rounded-full" asChild>
+                            <Link href="/contact">
+                                Get Started <ArrowRight className="h-4 w-4" />
+                            </Link>
                         </Button>
                     </div>
 
@@ -124,8 +126,10 @@ export function Navbar() {
                                 </div>
                             ))}
                             <div className="pt-4 px-3">
-                                <Button className="w-full justify-center gap-2 rounded-full">
-                                    Get Started <ArrowRight className="h-4 w-4" />
+                                <Button className="w-full justify-center gap-2 rounded-full" asChild>
+                                    <Link href="/contact" onClick={() => setIsOpen(false)}>
+                                        Get Started <ArrowRight className="h-4 w-4" />
+                                    </Link>
                                 </Button>
                             </div>
                         </div>

@@ -6,7 +6,19 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Team() {
-    const teamMembers = [
+    interface TeamMember {
+        name: string;
+        role: string;
+        bio: string;
+        image: string;
+        socials: {
+            linkedin?: string;
+            twitter?: string;
+            github?: string;
+        };
+    }
+
+    const teamMembers: TeamMember[] = [
         {
             name: "Gursharan Singh",
             role: "Founder · CEO & CTO",

@@ -85,11 +85,11 @@ export default function About() {
                                     Teams repeating the same tasks every day. No visibility. No dashboards. No automation.
                                 </p>
                                 <p>
-                                    We saw this happening across SMEs in India — and we knew it didn't have to be that way.
+                                    We saw this happening across SMEs in India — and we knew it didn&apos;t have to be that way.
                                     Rama Techworks was founded to change this narrative.
                                 </p>
                                 <p className="font-medium text-foreground">
-                                    We don't believe in one-size-fits-all solutions.
+                                    We don&apos;t believe in one-size-fits-all solutions.
                                 </p>
                                 <p>
                                     We study how your business operates, understand your workflows, identify bottlenecks,
@@ -289,13 +289,13 @@ export default function About() {
                                 To become a trusted enterprise transformation partner — combining infrastructure, intelligence, and execution.
                             </p>
                             <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
-                                If you're looking for a team that understands both engineering and business, and builds technology that genuinely makes operations smoother, faster, and smarter, we're ready to work with you.
+                                If you&apos;re looking for a team that understands both engineering and business, and builds technology that genuinely makes operations smoother, faster, and smarter, we&apos;re ready to work with you.
                             </p>
 
                             <div>
                                 <Link href="/contact" className="inline-block w-full sm:w-auto">
                                     <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base rounded-full shadow-lg gap-2 hover:shadow-primary/25 transition-all">
-                                        Let's build systems that move your business forward <ArrowRight className="h-5 w-5" />
+                                        Let&apos;s build systems that move your business forward <ArrowRight className="h-5 w-5" />
                                     </Button>
                                 </Link>
                             </div>
