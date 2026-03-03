@@ -21,22 +21,22 @@ export default function Team() {
     const teamMembers: TeamMember[] = [
         {
             name: "Gursharan Singh",
-            role: "Founder · CEO & CTO",
+            role: "Founder",
             bio: "Gursharan Singh is a systems-focused engineer leading Rama Techworks at the intersection of infrastructure and intelligent automation. With experience spanning on-ground engineering execution and AI-driven workflow architecture, he brings a structured, enterprise-first approach to building scalable systems. His philosophy is simple: Design with clarity. Engineer with discipline. Scale with intelligence.",
-            image: "", // Placeholder for Gursharan's image
+            image: "/team/Gursharan.png",
             // socials: { linkedin: "#", twitter: "#" }
         },
         {
-            name: "Team Member 2",
-            role: "Role / Position",
-            bio: "Biography and introduction will be added here. They will help drive the operations and engineering goals of Rama Techworks forward.",
-            image: "", // Placeholder
+            name: "Kadambini Marwah",
+            role: "Chief Marketing Officer",
+            bio: "A growth-driven leader specializing in AI-powered enterprise communication and revenue strategy. With over five years of experience across HR consulting, BPO, and IT sectors, she brings deep operational and hiring expertise. She has successfully catered to critical and senior-level positions, understanding enterprise workforce dynamics firsthand.",
+            image: "/team/kadambini.png",
             // socials: { linkedin: "#" }
         },
         {
-            name: "Team Member 3",
-            role: "Role / Position",
-            bio: "Biography and introduction will be added here. Providing crucial support in systems design and field execution workflows.",
+            name: "Jitin",
+            role: "Senior Developer",
+            bio: "Jitin is a full-stack developer with experience in building web applications. He is passionate about building scalable and maintainable code. He is also a team player and enjoys working in a collaborative environment.",
             image: "", // Placeholder
             // socials: { linkedin: "#" }
         }
@@ -107,7 +107,7 @@ export default function Team() {
                                                 src={member.image}
                                                 alt={member.name}
                                                 fill
-                                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                                className="object-contain p-4 transition-transform duration-500 group-hover:scale-105"
                                                 sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 33vw"
                                             />
                                         ) : (
