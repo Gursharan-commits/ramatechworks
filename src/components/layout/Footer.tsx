@@ -15,7 +15,7 @@ export function Footer() {
                         <Link href="/" className="flex items-center gap-2">
                             <div className="inline-block p-1 bg-white/10 rounded-lg">
                                 <Image
-                                    src="/rtw_logo.png"
+                                    src="/rtw_logo1.png"
                                     alt="Rama Techworks Logo"
                                     width={32}
                                     height={32}

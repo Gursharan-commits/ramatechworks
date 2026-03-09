@@ -34,7 +34,7 @@ export function Navbar() {
                     <div className="flex-shrink-0 flex items-center">
                         <Link href="/" className="flex items-center gap-2 font-bold text-2xl tracking-tighter text-primary">
                             <Image
-                                src="/rtw_logo.png"
+                                src="/rtw_logo1.png"
                                 alt="Rama Techworks Logo"
                                 width={40}
                                 height={40}
