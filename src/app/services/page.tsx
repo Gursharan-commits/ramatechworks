@@ -54,8 +54,8 @@ export default function ServicesOverview() {
                     animate="visible"
                 >
                     {/* Engineering overview */}
-                    <motion.div variants={itemVariants} className="flex h-full">
-                        <Card className="flex flex-col h-full border-border/50 hover:border-primary/50 transition-colors shadow-sm hover:shadow-md">
+                    <motion.div variants={itemVariants} className="h-full">
+                        <Card className="flex flex-col h-full w-full border-border/50 hover:border-primary/50 transition-colors shadow-sm hover:shadow-md">
                             <CardHeader>
                                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
                                     <Settings className="h-7 w-7 text-primary" />
@@ -93,8 +93,8 @@ export default function ServicesOverview() {
                     </motion.div>
 
                     {/* Intelligent Systems overview */}
-                    <motion.div variants={itemVariants} className="flex h-full">
-                        <Card className="flex flex-col h-full border-border/50 hover:border-primary/50 transition-colors shadow-sm hover:shadow-md">
+                    <motion.div variants={itemVariants} className="h-full">
+                        <Card className="flex flex-col h-full w-full border-border/50 hover:border-primary/50 transition-colors shadow-sm hover:shadow-md">
                             <CardHeader>
                                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
                                     <Cpu className="h-7 w-7 text-primary" />

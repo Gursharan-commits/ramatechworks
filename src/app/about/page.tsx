@@ -3,16 +3,17 @@
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Cpu, Zap, BarChart3, Users, Network, Lightbulb, Cog, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function About() {
     const itExpertise = [
-        "Custom website development",
+        "Agentic AI workflows and calling agents",
         "AI-based workflow automation",
-        "Business process optimization",
         "Data dashboards and reporting systems",
-        "Agentic AI workflows and calling agents"
+        "Business process optimization",
+        "Custom website development"
     ];
 
     const electricalExpertise = [
@@ -157,14 +158,14 @@ export default function About() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
-                            <Card className="h-full border-primary/20 bg-primary/5 hover:border-primary/40 transition-colors">
+                            <Card className="flex flex-col h-full w-full border-primary/20 bg-primary/5 hover:border-primary/40 transition-colors shadow-sm hover:shadow-md">
                                 <CardHeader>
                                     <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-4">
                                         <Cpu className="h-7 w-7 text-primary" />
                                     </div>
-                                    <CardTitle className="text-2xl">IT & Intelligent Systems</CardTitle>
+                                    <CardTitle className="text-2xl">AI & Intelligent Systems</CardTitle>
                                 </CardHeader>
-                                <CardContent>
+                                <CardContent className="flex-grow">
                                     <ul className="space-y-4 pt-2">
                                         {itExpertise.map((item, idx) => (
                                             <li key={idx} className="flex items-start text-foreground">
@@ -174,6 +175,14 @@ export default function About() {
                                         ))}
                                     </ul>
                                 </CardContent>
+                                <CardFooter className="pt-6">
+                                    <Button asChild className="w-full gap-2 group" variant="outline">
+                                        <Link href="/services/intelligent-systems">
+                                            View Intelligent Systems
+                                            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                        </Link>
+                                    </Button>
+                                </CardFooter>
                             </Card>
                         </motion.div>
 
@@ -183,14 +192,14 @@ export default function About() {
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
                         >
-                            <Card className="h-full border-border/50 bg-card hover:shadow-md transition-shadow">
+                            <Card className="flex flex-col h-full w-full border-border/50 bg-card hover:border-primary/50 transition-colors shadow-sm hover:shadow-md">
                                 <CardHeader>
                                     <div className="w-14 h-14 rounded-2xl bg-muted outline outline-1 outline-border flex items-center justify-center mb-4">
                                         <Network className="h-7 w-7 text-foreground" />
                                     </div>
                                     <CardTitle className="text-2xl">Electrical Infrastructure</CardTitle>
                                 </CardHeader>
-                                <CardContent>
+                                <CardContent className="flex-grow">
                                     <ul className="space-y-4 pt-2">
                                         {electricalExpertise.map((item, idx) => (
                                             <li key={idx} className="flex items-start text-muted-foreground">
@@ -200,6 +209,14 @@ export default function About() {
                                         ))}
                                     </ul>
                                 </CardContent>
+                                <CardFooter className="pt-6">
+                                    <Button asChild className="w-full gap-2 group" variant="outline">
+                                        <Link href="/services/engineering">
+                                            View Engineering Details
+                                            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                        </Link>
+                                    </Button>
+                                </CardFooter>
                             </Card>
                         </motion.div>
                     </div>
@@ -214,15 +231,29 @@ export default function About() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            className="relative"
+                            className="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden flex flex-col items-center justify-center p-8 text-center"
                         >
-                            <div className="aspect-[4/3] rounded-3xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 overflow-hidden flex flex-col items-center justify-center p-8 text-center shadow-inner">
-                                <MapPin className="h-16 w-16 text-primary mb-6 opacity-80" />
-                                <h3 className="text-4xl md:text-5xl font-extrabold text-foreground mb-4">Uttar Pradesh</h3>
-                                <div className="h-1 w-16 bg-primary/40 mx-auto rounded-full mb-6"></div>
-                                <p className="text-sm md:text-base text-muted-foreground uppercase tracking-widest font-semibold">
-                                    Primary execution sector
-                                </p>
+                            <Image
+                                src="/india_map_hero.png"
+                                alt="Map of India highlighting smart infrastructure connectivity"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+                            {/* Overlaying custom glowing nodes to approximate regions */}
+                            <div className="absolute inset-0 z-10">
+                                <span className="absolute top-[35%] left-[45%] flex h-4 w-4">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-4 w-4 bg-primary shadow-lg shadow-primary"></span>
+                                </span>
+                                <span className="absolute top-[50%] left-[30%] flex h-4 w-4">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75 delay-150"></span>
+                                    <span className="relative inline-flex rounded-full h-4 w-4 bg-accent shadow-lg shadow-accent"></span>
+                                </span>
+                                <span className="absolute top-[60%] left-[40%] flex h-4 w-4">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75 delay-300"></span>
+                                    <span className="relative inline-flex rounded-full h-4 w-4 bg-primary shadow-lg shadow-primary border border-white"></span>
+                                </span>
                             </div>
                         </motion.div>
 
@@ -239,7 +270,7 @@ export default function About() {
                                 On-Ground Execution & Accuracy
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                We have successfully executed smart meter installation projects across Uttar Pradesh for leading energy companies including <strong className="text-foreground">Intellismart, Polaris, IPS E Services, and DTG Infranext</strong>.
+                                We have successfully executed smart meter installation projects for leading energy companies including <strong className="text-foreground">Intellismart, Polaris, IPS E Services, and DTG Infranext</strong>.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed">
                                 By combining engineering precision with technology-driven accountability, we seamlessly manage thousands of installations, mitigating field challenges and accelerating deployment timelines.
@@ -292,13 +323,11 @@ export default function About() {
                                 If you&apos;re looking for a team that understands both engineering and business, and builds technology that genuinely makes operations smoother, faster, and smarter, we&apos;re ready to work with you.
                             </p>
 
-                            <div>
-                                <Link href="/contact" className="inline-block w-full sm:w-auto">
-                                    <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base rounded-full shadow-lg gap-2 hover:shadow-primary/25 transition-all">
-                                        Let&apos;s build systems that move your business forward <ArrowRight className="h-5 w-5" />
-                                    </Button>
-                                </Link>
-                            </div>
+                            <Link href="/#contact" className="inline-block w-full sm:w-auto">
+                                <Button size="lg" className="w-full sm:w-auto h-14 px-8 text-base rounded-full shadow-lg gap-2 hover:shadow-primary/25 transition-all">
+                                    Let&apos;s build systems that move your business forward <ArrowRight className="h-5 w-5" />
+                                </Button>
+                            </Link>
                         </motion.div>
                     </div>
                 </div>

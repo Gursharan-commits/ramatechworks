@@ -53,16 +53,16 @@ export function Footer() {
                                 <Link href="/" className="hover:text-primary transition-colors">Home</Link>
                             </li>
                             <li>
-                                <Link href="/about" className="hover:text-primary transition-colors">About Us</Link>
+                                <Link href="/#about" className="hover:text-primary transition-colors">About Us</Link>
                             </li>
                             <li>
-                                <Link href="/services" className="hover:text-primary transition-colors">Services</Link>
+                                <Link href="/#services" className="hover:text-primary transition-colors">Services</Link>
                             </li>
                             <li>
-                                <Link href="/team" className="hover:text-primary transition-colors">Our Team</Link>
+                                <Link href="/#team" className="hover:text-primary transition-colors">Our Team</Link>
                             </li>
                             <li>
-                                <Link href="/contact" className="hover:text-primary transition-colors">Contact</Link>
+                                <Link href="/#contact" className="hover:text-primary transition-colors">Contact</Link>
                             </li>
                         </ul>
                     </div>
@@ -72,16 +72,16 @@ export function Footer() {
                         <h4 className="text-lg font-semibold tracking-tight">Capabilities</h4>
                         <ul className="space-y-2 text-sm text-background/80">
                             <li>
-                                <Link href="/services/engineering" className="hover:text-primary transition-colors">Intelligent System Architecture</Link>
+                                <Link href="/#services" className="hover:text-primary transition-colors">Intelligent System Architecture</Link>
                             </li>
                             <li>
-                                <Link href="/services/intelligent-systems" className="hover:text-primary transition-colors">Agentic AI & Automation Engineering</Link>
+                                <Link href="/#services" className="hover:text-primary transition-colors">Agentic AI & Automation Engineering</Link>
                             </li>
                             <li>
-                                <Link href="/services/engineering" className="hover:text-primary transition-colors">Enterprise Infrastructure Execution</Link>
+                                <Link href="/#services" className="hover:text-primary transition-colors">Enterprise Infrastructure Execution</Link>
                             </li>
                             <li>
-                                <Link href="/services/intelligent-systems" className="hover:text-primary transition-colors">Data & Workflow Integration</Link>
+                                <Link href="/#services" className="hover:text-primary transition-colors">Data & Workflow Integration</Link>
                             </li>
                         </ul>
                     </div>

@@ -5,6 +5,10 @@ import { ArrowRight, Blocks, Cog, Handshake, MessageSquare, Workflow, TrendingUp
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
+import About from "./about/page";
+import Services from "./services/page";
+import Team from "./team/page";
+import Contact from "./contact/page";
 
 export default function Home() {
   const containerVariants: Variants = {
@@ -92,7 +96,7 @@ export default function Home() {
           >
             Engineering Intelligent Infrastructure for <br className="hidden sm:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-foreground">
-              Modern
+              Modern Enterprises
             </span>
           </motion.h1>
 
@@ -100,15 +104,15 @@ export default function Home() {
             variants={itemVariants}
             className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            Rama Techworks is a technology-driven enterprise focused on engineering robust, intelligent systems that scale with your SME or enterprise.
+            Rama Techworks is a technology-driven company focused on engineering robust, intelligent systems that scale with your SME.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" className="h-12 px-8 text-base rounded-full shadow-lg hover:shadow-primary/25 transition-all w-full sm:w-auto" asChild>
-              <Link href="/services">Explore Services</Link>
+              <Link href="/#services">Explore Services</Link>
             </Button>
             <Button size="lg" variant="outline" className="h-12 px-8 text-base rounded-full w-full sm:w-auto" asChild>
-              <Link href="/contact">Contact Us</Link>
+              <Link href="/#contact">Contact Us</Link>
             </Button>
           </motion.div>
         </motion.div>
@@ -164,57 +168,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Value Proposition Section */}
-      <section className="py-24 bg-muted/50 border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Why Choose Rama Techworks?</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg pt-2">
-              We translate complex technical challenges into streamlined, efficient operational solutions.
-            </p>
-          </div>
+      {/* About Section */}
+      <div id="about" className="scroll-mt-20">
+        <About />
+      </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-              >
-                <Card className="h-full border-border/50 bg-card hover:shadow-md transition-shadow duration-300 group">
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                      {feature.icon}
-                    </div>
-                    <CardTitle className="text-xl">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-base leading-relaxed">
-                      {feature.description}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Services Section */}
+      <div id="services" className="scroll-mt-20">
+        <Services />
+      </div>
 
-      {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/5"></div>
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Ready to transform your operations?</h2>
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Partner with us to build the technology foundation your enterprise needs to thrive.
-          </p>
-          <Button size="lg" className="h-14 px-10 text-lg rounded-full shadow-lg gap-2" asChild>
-            <Link href="/contact">Get in touch with our team <ArrowRight className="h-5 w-5" /></Link>
-          </Button>
-        </div>
-      </section>
+      {/* Team Section */}
+      <div id="team" className="scroll-mt-20">
+        <Team />
+      </div>
+
+      {/* Contact Section */}
+      <div id="contact" className="scroll-mt-20">
+        <Contact />
+      </div>
     </div>
   );
 }

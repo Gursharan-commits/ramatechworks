@@ -9,17 +9,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
-    {
-        name: "Services",
-        href: "/services",
-        subLinks: [
-            { name: "Engineering", href: "/services/engineering" },
-            { name: "Intelligent Systems", href: "/services/intelligent-systems" },
-        ]
-    },
-    { name: "Team", href: "/team" },
-    { name: "Contact Us", href: "/contact" },
+    { name: "About Us", href: "/#about" },
+    { name: "Services", href: "/#services" },
+    { name: "Team", href: "/#team" },
 ];
 
 export function Navbar() {
@@ -55,27 +47,11 @@ export function Navbar() {
                                 >
                                     {link.name}
                                 </Link>
-                                {/* Simple dropdown for Services on hover */}
-                                {link.subLinks && (
-                                    <div className="absolute left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out transform -translate-y-2 group-hover:translate-y-0">
-                                        <div className="bg-card shadow-lg rounded-xl border border-border p-2 flex flex-col gap-1">
-                                            {link.subLinks.map(sub => (
-                                                <Link
-                                                    key={sub.name}
-                                                    href={sub.href}
-                                                    className="px-4 py-2 text-sm text-foreground/70 hover:text-primary hover:bg-muted rounded-md transition-colors"
-                                                >
-                                                    {sub.name}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
                             </div>
                         ))}
 
                         <Button size="sm" className="gap-2 rounded-full" asChild>
-                            <Link href="/contact">
+                            <Link href="/#contact">
                                 Get Started <ArrowRight className="h-4 w-4" />
                             </Link>
                         </Button>
@@ -118,25 +94,11 @@ export function Navbar() {
                                     >
                                         {link.name}
                                     </Link>
-                                    {link.subLinks && (
-                                        <div className="pl-6 space-y-1 mt-1 border-l-2 border-border ml-3">
-                                            {link.subLinks.map(sub => (
-                                                <Link
-                                                    key={sub.name}
-                                                    href={sub.href}
-                                                    className="text-muted-foreground hover:text-primary block px-3 py-2 text-sm font-medium transition-colors"
-                                                    onClick={() => setIsOpen(false)}
-                                                >
-                                                    {sub.name}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    )}
                                 </div>
                             ))}
                             <div className="pt-4 px-3">
                                 <Button className="w-full justify-center gap-2 rounded-full" asChild>
-                                    <Link href="/contact" onClick={() => setIsOpen(false)}>
+                                    <Link href="/#contact" onClick={() => setIsOpen(false)}>
                                         Get Started <ArrowRight className="h-4 w-4" />
                                     </Link>
                                 </Button>

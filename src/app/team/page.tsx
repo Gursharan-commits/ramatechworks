@@ -107,7 +107,7 @@ export default function Team() {
                                                 src={member.image}
                                                 alt={member.name}
                                                 fill
-                                                className="object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                                                className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                                                 sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 33vw"
                                             />
                                         ) : (
