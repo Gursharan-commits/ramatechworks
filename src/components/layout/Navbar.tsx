@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -31,8 +32,15 @@ export function Navbar() {
 
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
-                        <Link href="/" className="font-bold text-2xl tracking-tighter text-primary">
-                            Rama<span className="text-foreground">Techworks</span>
+                        <Link href="/" className="flex items-center">
+                            <Image
+                                src="/rtw_logo.png"
+                                alt="Rama Techworks Logo"
+                                width={240}
+                                height={60}
+                                className="h-10 sm:h-12 w-auto object-contain"
+                                priority
+                            />
                         </Link>
                     </div>
 
