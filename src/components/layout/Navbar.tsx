@@ -32,15 +32,16 @@ export function Navbar() {
 
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
-                        <Link href="/" className="flex items-center">
+                        <Link href="/" className="flex items-center gap-2 font-bold text-2xl tracking-tighter text-primary">
                             <Image
                                 src="/rtw_logo.png"
                                 alt="Rama Techworks Logo"
-                                width={240}
-                                height={60}
-                                className="h-10 sm:h-12 w-auto object-contain"
+                                width={40}
+                                height={40}
+                                className="h-10 w-auto object-contain"
                                 priority
                             />
+                            <span>Rama<span className="text-foreground">Techworks</span></span>
                         </Link>
                     </div>
 

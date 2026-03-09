@@ -12,15 +12,20 @@ export function Footer() {
 
                     {/* Brand Info */}
                     <div className="space-y-4">
-                        <div className="inline-block p-2 bg-white/10 rounded-lg">
-                            <Image
-                                src="/rtw_logo.png"
-                                alt="Rama Techworks Logo"
-                                width={240}
-                                height={60}
-                                className="h-10 w-auto object-contain brightness-0 invert"
-                            />
-                        </div>
+                        <Link href="/" className="flex items-center gap-2">
+                            <div className="inline-block p-1 bg-white/10 rounded-lg">
+                                <Image
+                                    src="/rtw_logo.png"
+                                    alt="Rama Techworks Logo"
+                                    width={32}
+                                    height={32}
+                                    className="h-8 w-auto object-contain brightness-0 invert"
+                                />
+                            </div>
+                            <h3 className="text-2xl font-bold tracking-tighter">
+                                Rama<span className="text-primary">Techworks</span>
+                            </h3>
+                        </Link>
                         <p className="text-background/80 text-sm leading-relaxed max-w-xs">
                             Engineering intelligent systems improving operational efficiency for SMEs.
                         </p>
